@@ -33,16 +33,16 @@ export default function Register() {
     const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (!name) {
-      setError({ type: "name", message: "A Name is required" });
+      setError({ type: "name", message: "Name is required" });
       isError = true;
     } else if (!email) {
-      setError({ type: "email", message: "An Email is required" });
+      setError({ type: "email", message: "Email is required" });
       isError = true;
     } else if (!reg.test(email)) {
-      setError({ type: "email", message: "The Email is not valid" });
+      setError({ type: "email", message: "Email is not valid" });
       isError = true;
     } else if (!password) {
-      setError({ type: "password", message: "A Password is required" });
+      setError({ type: "password", message: "Password is required" });
       isError = true;
     } else if (password.length < 8) {
       setError({
