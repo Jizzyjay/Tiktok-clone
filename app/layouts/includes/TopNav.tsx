@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { debounce } from "debounce";
 import { useRouter, usePathname } from "next/navigation";
 import { BiSearch, BiUser } from "react-icons/bi";
@@ -11,6 +12,7 @@ import { useGeneralStore } from "@/app/stores/general";
 import useCreateBucketUrl from "@/app/hooks/useCreateBucketUrl";
 import { RandomUsers } from "@/app/types";
 import useSearchProfilesByName from "@/app/hooks/useSearchProfilesByName";
+import profileImg from '../../../public/images/placeholder.jpg'
 
 export default function TopNav() {
   const userContext = useUser();
@@ -128,9 +130,16 @@ export default function TopNav() {
                     onClick={() => setShowMenu((showMenu = !showMenu))}
                     className="mt-1 border border-gray-200 rounded-full"
                   >
-                    <img
+                    {/* <img
                       className="rounded-full w-[35px] h-[35px]"
-                      src={useCreateBucketUrl(userContext?.user?.image || "")}
+                      // src={useCreateBucketUrl(userContext?.user?.image || "")
+                        src="/public/images/"
+                    
+                    /> */}
+                    <Image
+                    className="rounded-full w-[35px] h-[35px]"
+                    src={profileImg}
+                    alt="profile image"
                     />
                   </button>
 

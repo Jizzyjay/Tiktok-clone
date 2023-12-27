@@ -2,6 +2,8 @@ import Link from "next/link";
 import { AiOutlineCheck } from "react-icons/ai";
 import useCreateBucketUrl from "@/app/hooks/useCreateBucketUrl";
 import { MenuItemFollowCompTypes } from "@/app/types";
+import Image from "next/image";
+import profileImg from '../../../public/images/placeholder.jpg'
 
 
 export default function MenuItemFollow({ user }: MenuItemFollowCompTypes) {
@@ -11,11 +13,16 @@ export default function MenuItemFollow({ user }: MenuItemFollowCompTypes) {
         href={`/profile/${user?.id}`}
         className="flex items-center hover:bg-gray-100 rounded-md w-full py-1.5 px-2"
       >
-        <img
+        {/* <img
           className="rounded-full lg:mx-0 mx-auto"
           width="35"
           src={useCreateBucketUrl(user?.image)}
-        />
+        /> */}
+        <Image
+                    className="rounded-full w-[35px] h-[35px]"
+                    src={profileImg}
+                    alt="profile image"
+                    />
         <div className="lg:pl-2.5 lg:block hidden">
           <div className="flex items-center">
             <p className="font-bold text-[14px] truncate">{user?.name}</p>

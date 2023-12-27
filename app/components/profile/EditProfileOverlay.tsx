@@ -114,8 +114,7 @@ export default function EditProfileOverlay() {
         className="fixed flex justify-center pt-14 md:pt-[105px] z-50 top-0 left-0 w-full h-full bg-black bg-opacity-50 overflow-auto"
       >
         <div
-          className={`
-                        relative bg-white w-full max-w-[700px] sm:h-[580px] h-[655px] mx-3 p-4 rounded-lg mb-10
+          className={`relative bg-white w-full max-w-[700px] sm:h-[580px] h-[655px] mx-3 p-4 rounded-lg mb-10
                         ${!uploadedImage ? "h-[655px]" : "h-[580px]"}
                     `}
         >
@@ -214,18 +213,8 @@ export default function EditProfileOverlay() {
                         onChange={(e) => setUserBio(e.target.value)}
                         value={userBio || ""}
                         maxLength={80}
-                        className="
-                                                    resize-none
-                                                    w-full
-                                                    bg-[#F1F1F2]
-                                                    text-gray-800
-                                                    border
-                                                    border-gray-300
-                                                    rounded-md
-                                                    py-2.5
-                                                    px-3
-                                                    focus:outline-none
-                                                "
+                        className="resize-none w-full bg-[#F1F1F2] text-gray-800
+                        border border-gray-300 rounded-md py-2.5 px-3 focus:outline-none"
                       ></textarea>
                       <p className="text-[11px] text-gray-500">
                         {userBio ? userBio.length : 0}/80

@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import PostMainLikes from "./PostMainLikes";
 import useCreateBucketUrl from "../hooks/useCreateBucketUrl";
 import { PostMainCompTypes } from "../types";
+import profileImg from "../../public/images/placeholder.jpg";
+import Image from "next/image";
 
 export default function PostMain({ post }: PostMainCompTypes) {
   useEffect(() => {
@@ -31,10 +33,15 @@ export default function PostMain({ post }: PostMainCompTypes) {
     <>
       <div id={`PostMain-${post.id}`} className="flex border-b py-6">
         <div className="cursor-pointer">
-          <img
+          {/* <img
             className="rounded-full max-h-[60px]"
             width="60"
             src={useCreateBucketUrl(post?.profile?.image)}
+          /> */}
+          <Image
+            className="rounded-full w-[35px] h-[35px]"
+            src={profileImg}
+            alt="profile image"
           />
         </div>
 

@@ -11,6 +11,8 @@ import { usePostStore } from "@/app/stores/post";
 import { useProfileStore } from "@/app/stores/profile";
 import { useGeneralStore } from "@/app/stores/general";
 import useCreateBucketUrl from "@/app/hooks/useCreateBucketUrl";
+import Image from "next/image";
+import profileImg from "../../../public/images/placeholder.jpg";
 
 export default function Profile({ params }: ProfilePageTypes) {
   const contextUser = useUser();
@@ -30,9 +32,14 @@ export default function Profile({ params }: ProfilePageTypes) {
           <div className="flex w-[calc(100vw-230px)]">
             <ClientOnly>
               {currentProfile ? (
-                <img
-                  className="w-[120px] min-w-[120px] rounded-full"
-                  src={useCreateBucketUrl(currentProfile?.image)}
+                // <img
+                //   className="w-[120px] min-w-[120px] rounded-full"
+                //   src={useCreateBucketUrl(currentProfile?.image)}
+                // />
+                <Image
+                  className="rounded-full w-[35px] h-[35px]"
+                  src={profileImg}
+                  alt="profile image"
                 />
               ) : (
                 <div className="min-w-[150px] h-[120px] bg-gray-200 rounded-full" />
